@@ -215,6 +215,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -233,20 +234,69 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="loginRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginRegisterForm.Designer.cs">
+      <DependentUpon>loginRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="loginUC.Designer.cs">
+      <DependentUpon>loginUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="productEditUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="productEditUC.Designer.cs">
+      <DependentUpon>productEditUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="registerUC.Designer.cs">
+      <DependentUpon>registerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="searchUC.Designer.cs">
+      <DependentUpon>searchUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StockManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StockManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="YurtKayitDataSet.Designer.cs">
+    <Compile Include="StockManagementDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>YurtKayitDataSet.xsd</DependentUpon>
+      <DependentUpon>StockManagementDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagementDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet2.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginRegisterForm.resx">
+      <DependentUpon>loginRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginUC.resx">
+      <DependentUpon>loginUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productEditUC.resx">
+      <DependentUpon>productEditUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -257,6 +307,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="registerUC.resx">
+      <DependentUpon>registerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchUC.resx">
+      <DependentUpon>searchUC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -267,6 +323,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include=".xsc">
+      <DependentUpon>.xsd</DependentUpon>
+    </None>
+    <None Include=".xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include=".xss">
+      <DependentUpon>.xsd</DependentUpon>
+    </None>
     <None Include="StockManagementDataSet.xsc">
       <DependentUpon>StockManagementDataSet.xsd</DependentUpon>
     </None>
@@ -278,16 +345,27 @@
     <None Include="StockManagementDataSet.xss">
       <DependentUpon>StockManagementDataSet.xsd</DependentUpon>
     </None>
-    <None Include="YurtKayitDataSet.xsc">
-      <DependentUpon>YurtKayitDataSet.xsd</DependentUpon>
+    <None Include="StockManagementDataSet1.xsc">
+      <DependentUpon>StockManagementDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="YurtKayitDataSet.xsd">
+    <None Include="StockManagementDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>YurtKayitDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>StockManagementDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="YurtKayitDataSet.xss">
-      <DependentUpon>YurtKayitDataSet.xsd</DependentUpon>
+    <None Include="StockManagementDataSet1.xss">
+      <DependentUpon>StockManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet2.xsc">
+      <DependentUpon>StockManagementDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet2.xss">
+      <DependentUpon>StockManagementDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
