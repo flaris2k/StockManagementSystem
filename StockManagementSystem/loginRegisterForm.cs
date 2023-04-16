@@ -43,6 +43,8 @@ namespace StockManagementSystem
                 {
                     if (loginUC1.txtUsername.Text == rd[1].ToString() && loginUC1.txtPassword.Text == rd[2].ToString())
                     {
+                        dataGetSet.Userid = rd[0].ToString();
+                        dataGetSet.Userpass = rd[2].ToString();
                         Form1 mainpage = new Form1();
                         mainpage.Show();
                         this.Hide();

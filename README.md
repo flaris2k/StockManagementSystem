@@ -1,5 +1,5 @@
 
-# Stock Management System v2.0.0
+# Stock Management System v2.1.0
 
 This project is for personel using. You can easily manage your stocks and products.
 This project using Microsoft SQL Database.
@@ -13,6 +13,8 @@ This project using Microsoft SQL Database.
 - Remove Stock
 - Update Stock
 - List Stock
+- Profile Page
+- Change Password
 
 ![image](https://user-images.githubusercontent.com/111177595/232316499-5f706f80-0494-4684-8e9d-85c224f50591.png)
 

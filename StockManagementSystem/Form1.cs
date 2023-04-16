@@ -21,6 +21,7 @@ namespace StockManagementSystem
         SqlConnection bgl = new SqlConnection("Data Source=DESKTOP-6D2H8GE\\SQLEXPRESS;Initial Catalog=StockManagement;Integrated Security=True");
         private void Form1_Load(object sender, EventArgs e)
         {
+            userUC1.Hide();
             searchUC1.Hide();
             productEditUC1.Hide();
 
@@ -43,6 +44,7 @@ namespace StockManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
+            userUC1.Hide();
             searchUC1.Hide();
             productEditUC1.Hide();
         }
@@ -51,6 +53,7 @@ namespace StockManagementSystem
         {
             if(pc.AddPerm == true || pc.DelPerm == true || pc.UpdPerm == true)
             {
+                userUC1.Hide();
                 searchUC1.Hide();
                 productEditUC1.Show();
                 productEditUC1.BringToFront();
@@ -61,6 +64,14 @@ namespace StockManagementSystem
             }
             
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            userUC1.Show();
+            searchUC1.Hide();
+            productEditUC1.Hide();
+            userUC1.BringToFront();
         }
     }
 }

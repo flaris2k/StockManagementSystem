@@ -44,8 +44,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.productEditUC1 = new StockManagementSystem.productEditUC();
-            this.searchUC1 = new StockManagementSystem.searchUC();
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -53,6 +51,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.productEditUC1 = new StockManagementSystem.productEditUC();
+            this.searchUC1 = new StockManagementSystem.searchUC();
+            this.userUC1 = new StockManagementSystem.userUC();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -133,22 +134,7 @@
             this.button1.TabIndex = 14;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // productEditUC1
-            // 
-            this.productEditUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.productEditUC1.Location = new System.Drawing.Point(12, 12);
-            this.productEditUC1.Name = "productEditUC1";
-            this.productEditUC1.Size = new System.Drawing.Size(1468, 666);
-            this.productEditUC1.TabIndex = 59;
-            // 
-            // searchUC1
-            // 
-            this.searchUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.searchUC1.Location = new System.Drawing.Point(12, 12);
-            this.searchUC1.Name = "searchUC1";
-            this.searchUC1.Size = new System.Drawing.Size(1468, 666);
-            this.searchUC1.TabIndex = 58;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -246,6 +232,30 @@
             this.label4.TabIndex = 66;
             this.label4.Text = "Sale/Purchase";
             // 
+            // productEditUC1
+            // 
+            this.productEditUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.productEditUC1.Location = new System.Drawing.Point(12, 12);
+            this.productEditUC1.Name = "productEditUC1";
+            this.productEditUC1.Size = new System.Drawing.Size(1468, 666);
+            this.productEditUC1.TabIndex = 59;
+            // 
+            // searchUC1
+            // 
+            this.searchUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.searchUC1.Location = new System.Drawing.Point(12, 12);
+            this.searchUC1.Name = "searchUC1";
+            this.searchUC1.Size = new System.Drawing.Size(1468, 666);
+            this.searchUC1.TabIndex = 58;
+            // 
+            // userUC1
+            // 
+            this.userUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userUC1.Location = new System.Drawing.Point(12, 12);
+            this.userUC1.Name = "userUC1";
+            this.userUC1.Size = new System.Drawing.Size(1468, 666);
+            this.userUC1.TabIndex = 67;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +273,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.productEditUC1);
             this.Controls.Add(this.searchUC1);
+            this.Controls.Add(this.userUC1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -303,6 +314,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private userUC userUC1;
     }
 }
 
