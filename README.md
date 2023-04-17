@@ -1,5 +1,5 @@
 
-# Stock Management System v2.1.0
+# Stock Management System v3.0.0
 
 This project is for personel using. You can easily manage your stocks and products.
 This project using Microsoft SQL Database.
