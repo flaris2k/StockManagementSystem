@@ -43,6 +43,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.btnSale = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -51,9 +53,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.sellUC1 = new StockManagementSystem.sellUC();
+            this.buyUC1 = new StockManagementSystem.buyUC();
+            this.userUC1 = new StockManagementSystem.userUC();
             this.productEditUC1 = new StockManagementSystem.productEditUC();
             this.searchUC1 = new StockManagementSystem.searchUC();
-            this.userUC1 = new StockManagementSystem.userUC();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -81,6 +86,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Location = new System.Drawing.Point(802, 8);
@@ -88,7 +94,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 90);
             this.button3.TabIndex = 13;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
@@ -111,6 +117,9 @@
             this.panel1.AllowDrop = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnBuy);
+            this.panel1.Controls.Add(this.btnSale);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -119,6 +128,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1469, 107);
             this.panel1.TabIndex = 57;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnBuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuy.BackgroundImage")));
+            this.btnBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuy.Location = new System.Drawing.Point(915, 8);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(20);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(90, 90);
+            this.btnBuy.TabIndex = 16;
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // btnSale
+            // 
+            this.btnSale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSale.BackgroundImage")));
+            this.btnSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSale.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSale.Image = ((System.Drawing.Image)(resources.GetObject("btnSale.Image")));
+            this.btnSale.Location = new System.Drawing.Point(463, 8);
+            this.btnSale.Margin = new System.Windows.Forms.Padding(20);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Size = new System.Drawing.Size(90, 90);
+            this.btnSale.TabIndex = 15;
+            this.btnSale.UseVisualStyleBackColor = true;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // button1
             // 
@@ -204,9 +241,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Location = new System.Drawing.Point(12, 353);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 47);
+            this.label2.Size = new System.Drawing.Size(79, 47);
             this.label2.TabIndex = 64;
-            this.label2.Text = "Sales";
+            this.label2.Text = "Sell";
             // 
             // label3
             // 
@@ -216,9 +253,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(401, 353);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 47);
+            this.label3.Size = new System.Drawing.Size(84, 47);
             this.label3.TabIndex = 65;
-            this.label3.Text = "Purchases";
+            this.label3.Text = "Buy";
             // 
             // label4
             // 
@@ -228,9 +265,50 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(796, 353);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(258, 47);
+            this.label4.Size = new System.Drawing.Size(157, 47);
             this.label4.TabIndex = 66;
-            this.label4.Text = "Sale/Purchase";
+            this.label4.Text = "Sell/Buy";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(1372, 8);
+            this.button5.Margin = new System.Windows.Forms.Padding(7);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 90);
+            this.button5.TabIndex = 17;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // sellUC1
+            // 
+            this.sellUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.sellUC1.Location = new System.Drawing.Point(12, 12);
+            this.sellUC1.Name = "sellUC1";
+            this.sellUC1.Size = new System.Drawing.Size(1468, 666);
+            this.sellUC1.TabIndex = 69;
+            // 
+            // buyUC1
+            // 
+            this.buyUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buyUC1.Location = new System.Drawing.Point(12, 12);
+            this.buyUC1.Name = "buyUC1";
+            this.buyUC1.Size = new System.Drawing.Size(1468, 666);
+            this.buyUC1.TabIndex = 68;
+            // 
+            // userUC1
+            // 
+            this.userUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userUC1.Location = new System.Drawing.Point(12, 12);
+            this.userUC1.Name = "userUC1";
+            this.userUC1.Size = new System.Drawing.Size(1468, 666);
+            this.userUC1.TabIndex = 67;
+            this.userUC1.Load += new System.EventHandler(this.userUC1_Load);
             // 
             // productEditUC1
             // 
@@ -247,14 +325,6 @@
             this.searchUC1.Name = "searchUC1";
             this.searchUC1.Size = new System.Drawing.Size(1468, 666);
             this.searchUC1.TabIndex = 58;
-            // 
-            // userUC1
-            // 
-            this.userUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.userUC1.Location = new System.Drawing.Point(12, 12);
-            this.userUC1.Name = "userUC1";
-            this.userUC1.Size = new System.Drawing.Size(1468, 666);
-            this.userUC1.TabIndex = 67;
             // 
             // Form1
             // 
@@ -273,6 +343,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.productEditUC1);
             this.Controls.Add(this.searchUC1);
+            this.Controls.Add(this.sellUC1);
+            this.Controls.Add(this.buyUC1);
             this.Controls.Add(this.userUC1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -315,6 +387,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private userUC userUC1;
+        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.Button btnSale;
+        private buyUC buyUC1;
+        private sellUC sellUC1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

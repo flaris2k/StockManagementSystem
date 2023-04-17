@@ -23,7 +23,7 @@ namespace StockManagementSystem
 
         private void searchUC_Load(object sender, EventArgs e)
         {
-            this.productsTableAdapter.Fill(this.stockManagementDataSet2.products);
+            this.productsTableAdapter.Fill(this.stockManagementDataSet5.products);
             
         }
 
@@ -36,7 +36,7 @@ namespace StockManagementSystem
             bgl.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("select productID,productName,productPrice,productStock,productBarcode from products", bgl);
+                SqlCommand cmd = new SqlCommand("select productID,productName,productBprice,productSprice,productStock,productBarcode from products", bgl);
                 SqlDataReader rd = cmd.ExecuteReader();
 
 
@@ -46,7 +46,7 @@ namespace StockManagementSystem
                     {
                         if (rd[0].ToString() == txtSearch.Text)
                         {
-                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString());
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
                             
                         }
                     }
@@ -54,28 +54,35 @@ namespace StockManagementSystem
                     {
                         if (rd[1].ToString().Contains(txtSearch.Text))
                         {
-                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString());
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
                         }
                     }
-                    else if (cmbType.Text == "Price")
+                    else if (cmbType.Text == "Buy Price")
                     {
                         if (rd[2].ToString() == txtSearch.Text)
                         {
-                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString());
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
+                        }
+                    }
+                    else if (cmbType.Text == "Sell Price")
+                    {
+                        if (rd[3].ToString() == txtSearch.Text)
+                        {
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
                         }
                     }
                     else if (cmbType.Text == "Stock")
                     {
-                        if (rd[3].ToString() == txtSearch.Text)
+                        if (rd[4].ToString() == txtSearch.Text)
                         {
-                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString());
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
                         }
                     }
                     else if (cmbType.Text == "Barcode")
                     {
-                        if (rd[4].ToString() == txtSearch.Text)
+                        if (rd[5].ToString() == txtSearch.Text)
                         {
-                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString());
+                            dataGridView1.Rows.Add(rd[0].ToString(), rd[1].ToString(), rd[2].ToString(), rd[3].ToString(), rd[4].ToString(), rd[5].ToString());
                         }
                     }
                 }
@@ -90,8 +97,8 @@ namespace StockManagementSystem
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = productsBindingSource1;
-            this.productsTableAdapter.Fill(this.stockManagementDataSet2.products);
+            dataGridView1.DataSource = productsBindingSource;
+            this.productsTableAdapter.Fill(this.stockManagementDataSet5.products);
             dataGridView1.Refresh();
         }
     }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
+
 namespace StockManagementSystem
 {
     public partial class Form1 : Form
@@ -23,7 +25,14 @@ namespace StockManagementSystem
         {
             userUC1.Hide();
             searchUC1.Hide();
+            buyUC1.Hide();
+            sellUC1.Hide();
             productEditUC1.Hide();
+
+            if(dataGetSet.Usertype == "personel")
+            {
+                button3.BackColor = Color.Red;
+            }
 
         }
 
@@ -33,6 +42,9 @@ namespace StockManagementSystem
             {
                 searchUC1.Show();
                 productEditUC1.Hide();
+                buyUC1.Hide();
+                sellUC1.Hide();
+                userUC1.Hide();
                 searchUC1.BringToFront();
             }
             else
@@ -46,15 +58,19 @@ namespace StockManagementSystem
         {
             userUC1.Hide();
             searchUC1.Hide();
+            sellUC1.Hide();
+            buyUC1.Hide();
             productEditUC1.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(pc.AddPerm == true || pc.DelPerm == true || pc.UpdPerm == true)
+            if(dataGetSet.Usertype == "admin")
             {
                 userUC1.Hide();
                 searchUC1.Hide();
+                buyUC1.Hide();
+                sellUC1.Hide();
                 productEditUC1.Show();
                 productEditUC1.BringToFront();
             }
@@ -70,8 +86,46 @@ namespace StockManagementSystem
         {
             userUC1.Show();
             searchUC1.Hide();
+            buyUC1.Hide();
+            sellUC1.Hide();
             productEditUC1.Hide();
             userUC1.BringToFront();
+        }
+
+        private void userUC1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            buyUC1.Show();
+            sellUC1.Hide();
+            userUC1.Hide();
+            searchUC1.Hide();
+            productEditUC1.Hide();
+            buyUC1.BringToFront();
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            sellUC1.Show();
+            userUC1.Hide();
+            searchUC1.Hide();
+            productEditUC1.Hide();
+            sellUC1.BringToFront();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Thread th = new Thread(onf);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            this.Close();
+        }
+        private void onf()
+        {
+            Application.Run(new loginRegisterForm());
         }
     }
 }

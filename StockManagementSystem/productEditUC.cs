@@ -25,7 +25,7 @@ namespace StockManagementSystem
 
         private void productEditUC_Load(object sender, EventArgs e)
         {
-            this.productsTableAdapter.Fill(this.stockManagementDataSet.products);
+            this.productsTableAdapter.Fill(this.stockManagementDataSet4.products);
         }
 
         private void chooseIMG_Click(object sender, EventArgs e)
@@ -40,53 +40,27 @@ namespace StockManagementSystem
             int choose;
             choose = dataGridView1.SelectedCells[0].RowIndex;
 
-            string id, name, price, stock, barcode, image;
+            string id, name, bprice, stock, barcode, image,sprice;
 
             id = dataGridView1.Rows[choose].Cells[0].Value.ToString();
             name = dataGridView1.Rows[choose].Cells[1].Value.ToString();
-            price = dataGridView1.Rows[choose].Cells[2].Value.ToString();
-            stock = dataGridView1.Rows[choose].Cells[3].Value.ToString();
-            barcode = dataGridView1.Rows[choose].Cells[4].Value.ToString();
-            image = dataGridView1.Rows[choose].Cells[5].Value.ToString();
+            bprice = dataGridView1.Rows[choose].Cells[2].Value.ToString();
+            sprice = dataGridView1.Rows[choose].Cells[3].Value.ToString();
+            stock = dataGridView1.Rows[choose].Cells[4].Value.ToString();
+            barcode = dataGridView1.Rows[choose].Cells[5].Value.ToString();
+            image = dataGridView1.Rows[choose].Cells[6].Value.ToString();
 
             txtProductID.Text = id;
             txtProductName.Text = name;
-            txtProductPrice.Text = price;
+            txtProductSPrice.Text = sprice;
+            txtProductBPrice.Text = bprice;
             txtProductStock.Text = stock;
             txtProductBCode.Text = barcode;
             txtProductImage.Text = image;
             pictureBox1.ImageLocation = image;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bgl.Open();
-            try
-            {
-                if (txtProductBCode.Text != "" && txtProductName.Text != "" && txtProductPrice.Text != "" && txtProductStock.Text != "" && AddPerm == true)
-                {
-
-                    SqlCommand cmd = new SqlCommand("insert into products(productName,productPrice,productBarcode,productImage,productStock) values(@a,@s,@d,@f,@g)", bgl);
-                    cmd.Parameters.AddWithValue("@a", txtProductName.Text);
-                    cmd.Parameters.AddWithValue("@s", txtProductPrice.Text);
-                    cmd.Parameters.AddWithValue("@d", txtProductBCode.Text);
-                    cmd.Parameters.AddWithValue("@f", txtProductImage.Text);
-                    cmd.Parameters.AddWithValue("@g", txtProductStock.Text);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Product Added");
-
-                }
-                this.productsTableAdapter.Fill(this.stockManagementDataSet.products);
-            }
-
-            catch (Exception)
-            {
-
-                MessageBox.Show("Something went wrong!");
-            }
-
-            bgl.Close();
-        }
+        
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -108,7 +82,8 @@ namespace StockManagementSystem
 
                 MessageBox.Show("Something went wrong!");
             }
-            
+            this.productsTableAdapter.Fill(this.stockManagementDataSet4.products);
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -118,10 +93,11 @@ namespace StockManagementSystem
             {
                 if(UpdPerm == true)
                 {
-                    SqlCommand cmd3 = new SqlCommand("update products set productName=@z2,productPrice=@z3,productStock=@z4,productBarcode=@z5,productImage=@z6 where productID=@z1", bgl);
+                    SqlCommand cmd3 = new SqlCommand("update products set productName=@z2,productBprice=@z3,productStock=@z4,productBarcode=@z5,productImage=@z6,productSprice=@z7 where productID=@z1", bgl);
                     cmd3.Parameters.AddWithValue("@z1", txtProductID.Text);
                     cmd3.Parameters.AddWithValue("@z2", txtProductName.Text);
-                    cmd3.Parameters.AddWithValue("@z3", txtProductPrice.Text);
+                    cmd3.Parameters.AddWithValue("@z3", txtProductBPrice.Text);
+                    cmd3.Parameters.AddWithValue("@z7", txtProductSPrice.Text);
                     cmd3.Parameters.AddWithValue("@z4", txtProductStock.Text);
                     cmd3.Parameters.AddWithValue("@z5", txtProductBCode.Text);
                     cmd3.Parameters.AddWithValue("@z6", txtProductImage.Text);
@@ -134,8 +110,35 @@ namespace StockManagementSystem
             {
                 MessageBox.Show("Something went wrong!");
             }
+            this.productsTableAdapter.Fill(this.stockManagementDataSet4.products);
 
             bgl.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bgl.Open();
+            try
+            {
+                if(txtProductBPrice.Text != "" && txtProductName.Text != "" & txtProductSPrice.Text != ""&& txtProductBPrice.Text !="" && AddPerm == true) 
+                {
+                    SqlCommand cmd = new SqlCommand("insert into products(productName,productBprice,productSprice,productStock,productBarcode,productImage) values(@a1,@a2,@a3,@a4,@a5,@a6)", bgl);
+                    cmd.Parameters.AddWithValue("@a1", txtProductName.Text);
+                    cmd.Parameters.AddWithValue("@a2", txtProductBPrice.Text);
+                    cmd.Parameters.AddWithValue("@a3", txtProductSPrice.Text);
+                    cmd.Parameters.AddWithValue("@a4", txtProductStock.Text);
+                    cmd.Parameters.AddWithValue("@a5", txtProductBCode.Text);
+                    cmd.Parameters.AddWithValue("@a6", txtProductImage.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product Added!");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Something went wrong!");
+            }
+
         }
     }
 }

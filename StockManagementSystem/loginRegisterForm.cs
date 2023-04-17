@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design.Behavior;
@@ -45,9 +46,14 @@ namespace StockManagementSystem
                     {
                         dataGetSet.Userid = rd[0].ToString();
                         dataGetSet.Userpass = rd[2].ToString();
-                        Form1 mainpage = new Form1();
+                        dataGetSet.Usertype = rd[3].ToString();
+                        /*Form1 mainpage = new Form1();
                         mainpage.Show();
-                        this.Hide();
+                        this.Close();*/
+                        Thread th = new Thread(onw);
+                        th.SetApartmentState(ApartmentState.STA);
+                        th.Start();
+                        this.Close();
                         
                     }
                 }
@@ -60,7 +66,10 @@ namespace StockManagementSystem
             }  
             bgl.Close();
         }
-
+        private void onw()
+        {
+            Application.Run(new Form1());
+        }
         private void BTNregister_Click(object sender, EventArgs e)
         {
             string userType = "personel";

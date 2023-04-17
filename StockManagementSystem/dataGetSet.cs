@@ -11,5 +11,7 @@ namespace StockManagementSystem
     {
         public static string Userid { get; set; }
         public static string Userpass { get; set; }
+
+        public static string Usertype { get; set; }
     }
 }

@@ -30,8 +30,8 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.BTNregister = new System.Windows.Forms.Button();
-            this.registerUC1 = new StockManagementSystem.registerUC();
             this.loginUC1 = new StockManagementSystem.loginUC();
+            this.registerUC1 = new StockManagementSystem.registerUC();
             this.SuspendLayout();
             // 
             // button1
@@ -41,7 +41,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 34);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -53,10 +53,18 @@
             this.BTNregister.Margin = new System.Windows.Forms.Padding(7);
             this.BTNregister.Name = "BTNregister";
             this.BTNregister.Size = new System.Drawing.Size(113, 34);
-            this.BTNregister.TabIndex = 2;
+            this.BTNregister.TabIndex = 4;
             this.BTNregister.Text = "Register";
             this.BTNregister.UseVisualStyleBackColor = true;
             this.BTNregister.Click += new System.EventHandler(this.BTNregister_Click);
+            // 
+            // loginUC1
+            // 
+            this.loginUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.loginUC1.Location = new System.Drawing.Point(0, 0);
+            this.loginUC1.Name = "loginUC1";
+            this.loginUC1.Size = new System.Drawing.Size(402, 153);
+            this.loginUC1.TabIndex = 1;
             // 
             // registerUC1
             // 
@@ -65,15 +73,7 @@
             this.registerUC1.Location = new System.Drawing.Point(0, 0);
             this.registerUC1.Name = "registerUC1";
             this.registerUC1.Size = new System.Drawing.Size(402, 178);
-            this.registerUC1.TabIndex = 4;
-            // 
-            // loginUC1
-            // 
-            this.loginUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.loginUC1.Location = new System.Drawing.Point(0, 0);
-            this.loginUC1.Name = "loginUC1";
-            this.loginUC1.Size = new System.Drawing.Size(402, 153);
-            this.loginUC1.TabIndex = 3;
+            this.registerUC1.TabIndex = 2;
             // 
             // loginRegisterForm
             // 

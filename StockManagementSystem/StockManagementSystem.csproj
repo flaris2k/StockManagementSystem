@@ -230,6 +230,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="buyUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="buyUC.Designer.cs">
+      <DependentUpon>buyUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataGetSet.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -274,6 +280,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sellUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="sellUC.Designer.cs">
+      <DependentUpon>sellUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -289,12 +301,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StockManagementDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StockManagementDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagementDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagementDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagementDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagementDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagementDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="userUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="userUC.Designer.cs">
       <DependentUpon>userUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="buyUC.resx">
+      <DependentUpon>buyUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="searchUC.resx">
       <DependentUpon>searchUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sellUC.resx">
+      <DependentUpon>sellUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userUC.resx">
       <DependentUpon>userUC.cs</DependentUpon>
@@ -378,6 +421,61 @@
     </None>
     <None Include="StockManagementDataSet2.xss">
       <DependentUpon>StockManagementDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet3.xsc">
+      <DependentUpon>StockManagementDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet3.xss">
+      <DependentUpon>StockManagementDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet4.xsc">
+      <DependentUpon>StockManagementDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet4.xss">
+      <DependentUpon>StockManagementDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet5.xsc">
+      <DependentUpon>StockManagementDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet5.xss">
+      <DependentUpon>StockManagementDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet6.xsc">
+      <DependentUpon>StockManagementDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet6.xss">
+      <DependentUpon>StockManagementDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet7.xsc">
+      <DependentUpon>StockManagementDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagementDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagementDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagementDataSet7.xss">
+      <DependentUpon>StockManagementDataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
